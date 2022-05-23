@@ -2,15 +2,15 @@ h2
   | Sign up
 = form_with model: @user, url: user_registration_path do |f|
   = render "devise/shared/error_messages", resource: resource
-  .field
+  .form-group
     = f.label :name
     br
     = f.text_field :name, autofocus: true, autocomplete: "name"
-  .field
+  .form-group
     = f.label :email
     br
     = f.email_field :email, autocomplete: "email"
-  .field
+  .form-group
     = f.label :password
     - if @minimum_password_length
       em
@@ -19,10 +19,10 @@ h2
         |  characters minimum)
     br
     = f.password_field :password, autocomplete: "new-password"
-  .field
+  .form-group
     = f.label :password_confirmation
     br
     = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
+  .form-group
     = f.submit "Sign up"
 = render "devise/shared/links"
