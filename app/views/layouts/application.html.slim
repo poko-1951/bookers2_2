@@ -8,14 +8,34 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  body
+  body.d-flex.flex-column
     header
-      - if user_signed_in?
-        li
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
-      - else
-        li
-          = link_to "新規登録", new_user_registration_path
-        li
-          = link_to "ログイン", new_user_session_path
-    = yield
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+        div.container
+          a.navbar-brand href="/" Bookers
+          ul.navbar-nav.ml-auto
+            - if user_signed_in?
+              li
+                = link_to "Home", user_path(current_user), class:"nav-link text-light"
+              li
+                = link_to "Users", users_path, class:"nav-link text-light"
+              li
+                = link_to "Books", books_path, class:"nav-link text-light"
+              li
+                = link_to "Log out", destroy_user_session_path, method: :delete, class:"nav-link text-light"
+            - else
+              li
+                = link_to "Home", root_path, class:"nav-link text-light"
+              li
+                = link_to "About", home_about_path, class:"nav-link text-light"
+              li
+                = link_to "Sign up", new_user_registration_path, class:"nav-link text-light"
+              li
+                = link_to "Log in", new_user_session_path, class:"nav-link text-light"
+    .main
+      = yield
+    footer
+      div.container.mt-5
+        div.row
+          div.mx-auto
+            p.text-center CopyRight Infratop.inc
