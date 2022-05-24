@@ -6,6 +6,7 @@ html
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
+    script src="https://kit.fontawesome.com/*******.js" crossorigin="anonymous"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body.d-flex.flex-column
@@ -33,6 +34,8 @@ html
               li
                 = link_to "Log in", new_user_session_path, class:"nav-link text-light"
     .main
+      p#notice
+        =notice
       = yield
     footer
       div.container.mt-5

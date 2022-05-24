@@ -1,4 +1,7 @@
-h1
-  | Homes#top
-p
-  | Find me in app/views/homes/top.html.erb
+div.mx-auto.col-11.col-sm-10.col-lg-8.col-xl-6
+  h1 welcome to <strong>Bookers</strong> !!
+  p in <strong>Bookers</strong>,
+  p you can share and exchange your opinions, inpressions, and emotions
+  p about various books!
+  div.row= link_to "Log in", new_user_session_path, class:"btn btn-info btn-sm btn-block mb-3"
+  div.row= link_to "Sign up", new_user_registration_path, class:"btn btn-success btn-sm btn-block"

@@ -3,10 +3,10 @@ h2.mt-3 New book
   .form-group
     = f.label :title
     br
-    = f.text_field :title, autocomplete: "title", class: "form-control"
+    = f.text_field :title, autocomplete: "title", class: "form-control mb-3"
   .form-group
     = f.label :body, "Opinion"
     br
-    = f.text_area :body, class: "form-control"
+    = f.text_area :body, class: "form-control mb-3"
   .form-group
     = f.submit "Create Book", class: "btn btn-success"
