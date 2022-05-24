@@ -1,28 +1,6 @@
-h2 User info
+= render "info", user: @user
 
-= image_tag @user.get_profile_image(100,100)
-table
-  tr
-    th name
-    td.fw-bold= @user.name
-  tr
-    th introduction
-    td.fw-bold= @user.introduction
-
-= link_to "edit", edit_user_path(@user.id)
-
-h2 New book
-= form_with model:@book do |f|
-  .form-group
-    = f.label :title
-    br
-    = f.text_field :title, class: "form-control"
-  .form-group
-    = f.label :body, "Opinion"
-    br
-    = f.text_area :body, class: "form-control"
-  .form-group
-    = f.submit "Create Book", class: "btn btn-success"
+= render "books/form", book: @book
 
 h2 Users
 table
