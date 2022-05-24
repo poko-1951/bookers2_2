@@ -33,7 +33,9 @@ html
                 = link_to "Sign up", new_user_registration_path, class:"nav-link text-light"
               li
                 = link_to "Log in", new_user_session_path, class:"nav-link text-light"
-    .mai
+    .main
+      p#notice
+        =notice
       = yield
     footer
       div.container.mt-5
