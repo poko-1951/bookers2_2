@@ -1,2 +1,21 @@
-h1 Users#edit
-p Find me in app/views/users/edit.html.slim
+.container
+  .row
+    .col-lg-5.mx-auto
+
+      h2 User info
+
+      = form_with model:@user do |f|
+        .form-group
+        = f.label :name
+        br
+        = f.text_field :name, class: "form-control mb-3"
+        .form-group
+        = f.label :profile_image, "Image"
+        br
+        = f.file_field :profile_image, class: "mb-3"
+        .form-group
+        = f.label :introduction
+        br
+        = f.text_area :introduction, class: "form-control mb-3"
+        .form-group
+        = f.submit "Update User", class: "btn btn-secondary"
