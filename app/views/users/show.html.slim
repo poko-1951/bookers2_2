@@ -16,11 +16,11 @@ h2.mt-3 New book
   .form-group
     = f.label :title
     br
-    = f.text_field :title, autocomplete: "title"
+    = f.text_field :title, autocomplete: "title", class: "form-control"
   .form-group
     = f.label :body, "Opinion"
     br
-    = f.text_field :body
+    = f.text_area :body, class: "form-control"
   .form-group
     = f.submit "Create Book", class: "btn btn-success"
 
