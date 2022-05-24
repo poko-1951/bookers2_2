@@ -1,7 +1,7 @@
 h2 User info
 
 = image_tag user.get_profile_image(100,100)
-table
+table.table.border-top
   tr
     th name
     td.fw-bold= user.name
@@ -9,4 +9,5 @@ table
     th introduction
     td.fw-bold= user.introduction
 
-= link_to "edit", edit_user_path(user.id)
+= link_to edit_user_path(user.id) do
+  .btn.btn-secondary Edit
