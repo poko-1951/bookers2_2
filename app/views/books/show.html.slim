@@ -1,2 +1,13 @@
-h1 Books#show
-p Find me in app/views/books/show.html.slim
+= render "users/info", user: @user
+
+= render "form", book: Book.new
+
+h2 Book detail
+table.border-top
+  tr
+    th
+      = link_to image_tag(@user.get_profile_image(80,80)), user_path(@user.id)
+      br
+      = link_to @user.name, user_path(@user.id)
+    td= @book.title
+    td= @book.body
