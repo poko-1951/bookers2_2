@@ -24,16 +24,15 @@ h2 New book
   .form-group
     = f.submit "Create Book", class: "btn btn-success"
 
-/
-  h2 Users
-  table
-    thead
+h2 Users
+table
+  thead
+    tr
+      th image
+      th name
+  tbody
+    - @users.each do |user|
       tr
-        th image
-        th name
-    tbody
-      - @users.each do |user|
-        tr
-          td= image_tag user.get_profile_image(80,80)
-          td= user.name
-          td= link_to "Show", user_path(user.id)
+        td= image_tag user.get_profile_image(80,80)
+        td= user.name
+        td= link_to "Show", user_path(user.id)
